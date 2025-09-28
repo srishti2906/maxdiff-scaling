@@ -1,5 +1,5 @@
-# max_diff_scaling.py
-# MaxDiff Article 1 — Introduction with Simple Count + ~95% CI visuals (standalone, optimized)
+# 1-max-diff-scaling.py
+# MaxDiff Article 1 — Introduction with Simple Count + ~95% CI visuals (retail example)
 
 from __future__ import annotations
 
@@ -185,9 +185,14 @@ def main(
     set_seed(42)
     ensure_outdir(out_dir)
 
+    # Retail product features example
     items = [
-        "Flexible Hours", "Work from Home", "Gym Membership",
-        "Free Lunch", "Stock Options", "Learning Budget"
+        "Free Shipping",
+        "Same-Day Delivery",
+        "Easy Returns",
+        "Extended Warranty",
+        "Loyalty Points",
+        "Discount Coupons"
     ]
 
     # 1) Simulate
@@ -221,7 +226,7 @@ def main(
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="MaxDiff Simple-Count + ~95% CI visuals (standalone, optimized)"
+        description="MaxDiff Simple-Count + ~95% CI visuals (retail example)"
     )
     parser.add_argument(
         "--out-dir",
