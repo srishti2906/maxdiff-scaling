@@ -1,42 +1,48 @@
-# MaxDiff Scaling — Python Implementation Series
+# 📊 MaxDiff Scaling — Simple Count Method with Visualizations
 
-This repository hosts a **series of Python implementations** for **MaxDiff Scaling (Maximum Difference Scaling)**.  
-Each article in the series introduces one methodology, its theory, and a corresponding Python script with examples and visualizations.
+This repository contains a **Python implementation** of **MaxDiff (Maximum Difference Scaling)** using the **Simple Count method**, along with confidence interval estimation and visualization.
 
-The goal: provide **self-contained, end-to-end code** for learning and applying MaxDiff in real-world contexts such as **Retail, People Analytics, Marketing, and more**.
+It is the **first part of a larger series** exploring MaxDiff methodologies (Simple Count, Logistic Regression, Hierarchical Bayes) and their **applied use cases across retail, marketing, HR/people analytics, healthcare, and technology**.
 
 ---
 
 ## 📌 What is MaxDiff?
 
-MaxDiff (also known as Best-Worst Scaling) is a survey-based technique where respondents are shown sets of items and asked:
-- Which is **most important**?
-- Which is **least important**?
+MaxDiff (or Best–Worst Scaling) is a survey-based technique where respondents are shown small sets of items and asked:
 
-Compared to traditional rating scales (1–5 stars, Likert):
-- ✅ Forces **trade-offs**
-- ✅ Reduces **rating biases**
-- ✅ Produces clear, **rank-ordered preferences**
+* Which is **most important**?
+* Which is **least important**?
+
+Compared to rating scales (1–5 stars, Likert), MaxDiff:
+✔️ Forces **trade-offs**
+✔️ Reduces **rating biases**
+✔️ Produces clear, **rank-ordered preferences**
+
+Example (Retail product features):
+
+* Set 1 → Most: *Free Shipping*, Least: *Easy Returns*
+* Set 2 → Most: *Same-Day Delivery*, Least: *Discounts*
 
 ---
 
-## 📂 Repository Structure
+## 📂 Repository Contents
 
-Each article in the series is accompanied by a standalone Python script:
+* **`max_diff_scaling.py`** → main script
 
-- **Article 1** → `1-max_diff_scaling.py`  
-  - Implements the **Simple Count method**
-  - Simulates toy survey responses
-  - Computes preference scores
-  - Estimates ~95% confidence intervals
-  - Generates two plots:
-    1. **CI Lollipop plot** (scores with confidence intervals)
-    2. **Executive bar chart** (scaled 0–100 utilities)
-  - Saves results as CSV + PNGs into `outputs/`
+  * Simulates toy survey responses
+  * Computes simple-count preference scores
+  * Estimates ~95% confidence intervals (approximate)
+  * Generates two key plots:
 
-Future articles will be added here, e.g.:
-- `maxdiff_logit.py` → Logistic regression approach  
-- `maxdiff_hb.py` → Hierarchical Bayes approach  
+    1. **CI Lollipop Plot** → Statistical view (scores + confidence intervals)
+    2. **Executive Bar Chart** → Leadership view (0–100 scaled utilities)
+  * Saves outputs as CSV + PNGs
+
+* **`outputs/`** (auto-created) → contains results after running the script:
+
+  * `maxdiff_simplecount_results.csv` → Tabular results with scores + CI
+  * `maxdiff_simplecount_ci.png` → Lollipop plot with CI
+  * `maxdiff_scaled_bar.png` → Executive 0–100 bar chart
 
 ---
 
@@ -50,76 +56,61 @@ cd maxdiff-scaling
 
 # (optional) create a virtual environment
 python -m venv .venv
-source .venv/bin/activate
+source .venv/bin/activate   # on Linux/Mac
+.venv\Scripts\activate      # on Windows
 
-# install dependencies
+# install requirements
 pip install -r requirements.txt
-````
-
-Minimal dependencies:
-
-```text
-numpy
-pandas
-matplotlib
 ```
 
 ---
 
 ## ▶️ Usage
 
-Run a specific article script, e.g. for **Article 1**:
+Run the script to simulate data and generate outputs:
 
 ```bash
 python max_diff_scaling.py
 ```
 
-Options (with defaults):
-
-```bash
---out-dir              Directory to save results (default: ./outputs)
---respondents          Number of respondents to simulate (default: 20)
---sets-per-respondent  Number of sets per respondent (default: 5)
---items-per-set        Number of items shown per set (default: 4)
-```
-
-Example:
-
-```bash
-python max_diff_scaling.py --respondents 50 --sets-per-respondent 8
-```
+Results will be saved in the `outputs/` folder.
 
 ---
 
-## 📊 Example Outputs (Article 1)
+## 📊 Example Outputs
 
-**1️⃣ MaxDiff Simple-Count Scores With Approx. 95% CI**
-Lollipop plot showing net-preference scores and ~95% confidence intervals.
+**1️⃣ MaxDiff Simple-Count Scores with ~95% CI**
+(Statistical view: dots = mean score, bars = CI, zero = neutral baseline)
 
-![CI Plot](outputs/maxdiff_simplecount_ci.png)
-
-**2️⃣ MaxDiff — Executive View (Scaled Utilities From Simple Count)**
-Scaled 0–100 bar chart, easier to communicate priorities to leadership.
-
-![Exec Plot](outputs/maxdiff_scaled_bar.png)
+**2️⃣ MaxDiff — Executive View (Scaled Utilities)**
+(Leadership view: rescaled 0–100, shows priority order & gaps)
 
 ---
 
 ## 🔮 Roadmap
-
 This repo will grow as the series progresses:
 
-* Article 1 → Simple Count ✅
-* Article 2 → 🔜
-* Article 3 → 🔜
-* Article 4 → 🔜
-* Article 5 → 🔜
+Article 1 → Simple Count Method ✅
+Article 2 → 🔜
+Article 3 → 🔜
+Article 4 → 🔜
+Article 5 → 🔜
+Article 6 → 🔜
+Article 7 → 🔜
+
+Follow along with the articles + code for **hands-on learning**.
 
 ---
 
-## 📝 License
+## 📎 References
 
-MIT License. See [LICENSE](LICENSE) for details.
+* Orme, B. “Getting Started with MaxDiff” — Sawtooth Software
+* Louviere, Flynn, Marley. *Best-Worst Scaling: Theory, Methods and Applications*
 
 ---
 
+## 🏷️ Tags
+
+#MaxDiff #DataScience #SurveyDesign #RetailAnalytics #MarketingAnalytics #DecisionScience #Python
+
+---
