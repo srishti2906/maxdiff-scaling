@@ -1,0 +1,3 @@
+pandas
+caas_jupyter_tools
+matplotlib
