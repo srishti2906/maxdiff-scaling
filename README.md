@@ -39,7 +39,7 @@ Compared to rating scales (1–5 stars, Likert), MaxDiff:
 Clone the repo and install dependencies:
 
 ```bash
-git clone https://github.com/<your-username>/maxdiff-scaling.git
+git clone [https://github.com/<your-username>/maxdiff-scaling.git](https://github.com/srishti2906/maxdiff-scaling.git)
 cd maxdiff-scaling
 
 # (optional) create a virtual environment
